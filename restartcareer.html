@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restart Your Career</title>
+
+  <!-- CSS inside HTML -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #fff;
+      padding: 60px 20px;
+    }
+
+    .hero button {
+      background: #fff;
+      color: #2575fc;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .hero button:hover {
+      background: #ddd;
+    }
+
+    .assessment form {
+      max-width: 500px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .assessment select, .assessment button {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .skills .cards, .jobs .job-listings {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card, .job {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 250px;
+      border-radius: 10px;
+    }
+
+    .card button, .job button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #2575fc;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .card button:hover, .job button:hover {
+      background: #6a11cb;
+    }
+    .confidence {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #ffffff;
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 50px;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .confidence h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .confidence ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    .confidence ul li {
+      font-size: 1.2rem;
+      margin: 15px 0;
+      position: relative;
+      padding-left: 30px;
+      text-align: left;
+    }
+
+    .confidence ul li::before {
+      content: "✨";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .final-cta {
+      background-color: #f7f7f7;
+      padding: 50px 20px;
+    }
+
+    .final-cta button {
+      background: #2575fc;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .final-cta button:hover {
+      background: #6a11cb;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <h1>Take the First Step Toward Your New Career!</h1>
+    <p>Whether returning after a break or changing fields, we're here to help you relaunch with confidence.</p>
+    <button onclick="scrollToSection('assessment')">Start Your Journey</button>
+  </section>
+  <section class="assessment" id="assessment">
+    <h2>Quick Career Assessment</h2>
+    <form id="careerForm">
+      <label for="experience">Current Experience Level:</label>
+      <select id="experience" required>
+        <option value="">Select</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+
+      <label for="industry">Interested Industry:</label>
+      <select id="industry" required>
+        <option value="">Select</option>
+        <option value="IT Support">IT Support</option>
+        <option value="Data Science">Web Development</option>
+        <option value="Artificial Intelligence">Artificial Intelligence</option>
+        <option value="Full Stack Developer">Full Stack Developer</option>
+        <option value="Machine Learning">Machine Learning</option>
+        <option value="Digital Marketing">Digital Marketing</option>
+        <option value="Business Admin">Business Administration</option>
+        <option value="Graphic Design">Graphic Design</option>
+      </select>
+
+      <button type="submit">Get Suggestions</button>
+    </form>
+    <div id="result"></div>
+  </section>
+  <section class="skills">
+    <h2>Explore Career Paths</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>IT Support</h3>
+        <p>Start a career in tech support and IT services.</p>
+        <button onclick="window.open('https://www.coursera.org/professional-certificates/google-it-support')">Explore Course</button>
+      </div>
+  
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>Build websites and web apps with HTML, CSS, JavaScript.</p>
+        <button onclick="window.open('https://www.coursera.org/professional-certificates/meta-front-end-developer')">Explore Course</button>
+      </div>
+  
+      <div class="card">
+        <h3>Artificial Intelligence</h3>
+        <p>Learn AI concepts like NLP, Computer Vision, Deep Learning.</p>
+        <button onclick="window.open('https://www.coursera.org/learn/ai-for-everyone')">Explore Course</button>
+      </div>
+  
+      <div class="card">
+        <h3>Full Stack Developer</h3>
+        <p>Master front-end and back-end technologies.</p>
+        <button onclick="window.open('https://www.udemy.com/course/the-complete-web-development-bootcamp/')">Explore Course</button>
+      </div>
+  
+      <div class="card">
+        <h3>Machine Learning</h3>
+        <p>Understand models, algorithms, and AI automation.</p>
+        <button onclick="window.open('https://www.coursera.org/learn/machine-learning')">Explore Course</button>
+      </div>
+  
+      <div class="card">
+        <h3>Digital Marketing</h3>
+        <p>Learn SEO, Social Media Marketing, and Content Creation.</p>
+        <button onclick="window.open('https://www.coursera.org/specializations/digital-marketing')">Explore Course</button>
+      </div>
+  
+      <div class="card">
+        <h3>Business Admin</h3>
+        <p>Master project management, communication, and leadership.</p>
+        <button onclick="window.open('https://www.coursera.org/professional-certificates/google-project-management')">Explore Course</button>
+      </div>
+  
+      <div class="card">
+        <h3>Graphic Design</h3>
+        <p>Unleash your creativity with design software and principles.</p>
+        <button onclick="window.open('https://www.coursera.org/specializations/graphic-design')">Explore Course</button>
+      </div>
+    </div>
+  </section>  
+  <section class="confidence">
+    <h2>Boost Your Confidence</h2>
+    <ul>
+      <li>Your skills are still valuable.</li>
+      <li>Every career gap tells a story of growth.</li>
+      <li>Confidence is built one small win at a time.</li>
+    </ul>
+  </section>
+  <script>
+    document.getElementById('careerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const experience = document.getElementById('experience').value;
+      const industry = document.getElementById('industry').value;
+
+      let resultText = `<h3>Suggested Path:</h3><p>Since you are a <strong>${experience}</strong> level candidate interested in <strong>${industry}</strong>, we recommend exploring related courses to improve your knowledge!</p>`;
+
+      document.getElementById('result').innerHTML = resultText;
+    });
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

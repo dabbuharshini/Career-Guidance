@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background:url(images/login.jpg) no-repeat center center/cover;
+            opacity:1.25;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        .form {
+            background: rgba(255, 255, 255, 0.2); 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+        .container {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn-x {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            width: 40%;
+            height: 40px;
+            border-radius: 5px;
+            margin: 0 auto 15px auto;
+            font-weight: bold;
+            transition: background-color 0.5s;
+        }
+        .toggle-btns {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .toggle-btn {
+            flex: 1;
+            background: cadetblue;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .toggle-btn:hover {
+            background:cadetblue;
+        }
+        .input-group {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .input-group.active {
+            display: flex;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+        .check-box {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+        .submit-btn {
+            background:rgb(160, 121, 234);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background:lightblue;
+        }
+        .register-link {
+            margin-top: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            color: white;
+        }
+        .register-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <div class="form">
+                <form id="login" class="input-group active" method="POST" action="http://localhost/Career%20Guidance/login.php">
+                    <div class="btn-x">Login</div>
+                    <input type="text" id="username" name="username" class="input-field" placeholder="Username" required>
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
+                    <div class="check-box">
+                        <input type="checkbox"> Remember password
+                    </div>
+                    <button type="submit" class="submit-btn">Login</button>
+                    <div class="register-link" onclick="showForm('register')">Not registered? Click here</div>
+                </form>
+        
+                <form id="register" class="input-group" method="POST" action="http://localhost/Career%20Guidance/register.php">
+                    <div class="btn-x">Register</div>
+                    <input type="text" name="username" class="input-field" placeholder="Username" required>
+                    <input type="email" name="email" class="input-field" placeholder="Email" required>
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
+                    <div class="check-box">
+                        <input type="checkbox"> I agree to the terms & conditions
+                    </div>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+      </div>
+    </div>
+
+    <script>
+  function showForm(formId) {
+    document.getElementById('login').classList.remove('active');
+    document.getElementById('register').classList.remove('active');
+    document.getElementById(formId).classList.add('active');
+  }
+
+  function simulateLogin(event) {
+    event.preventDefault(); // prevent form from submitting to PHP
+    const username = document.getElementById("username").value.trim();
+    if (username) {
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("username", username);
+      window.location.href = "index.html";
+    } else {
+      alert("Please enter a username.");
+    }
+  }
+</script>
+
+</body>
+</html>
